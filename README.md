@@ -18,3 +18,8 @@ Open console inside cloned project folder and run:
 - nest start --watch
 <br>
 Now the backend is running at: localhost:3001
+
+This will be used to develop this challenge:
+https://trello.com/c/HCu1dIiT/41-14-setup-backend
+https://www.figma.com/file/nm688N9VrU4wCqQZWWugoK/BPIFrance?t=DnOGltzBDsqBdxiZ-0
+https://www.figma.com/community/file/1184464880716263450
