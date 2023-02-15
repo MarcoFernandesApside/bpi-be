@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+ 
+model CarSim {
+  id Int          @default(autoincrement()) @id
+  product         ProductSim?
+  needsGuarantor  Boolean
+  guarantor       BaseInfoSim?
+}
+
+model HomeSim {
+  id Int          @default(autoincrement()) @id
+  product         ProductSim?
+  guarantors      BaseInfoSim[]
+}
+
+model ResultSim {
+  id              Int @default(autoincrement()) @id
+  isApproved      Boolean
+  
+}
+
+model Simulation {
+  id Int         @default(autoincrement()) @id
+  product         ProductSim?
+  worker          WorkerTypeSim?
+  baseInfo        BaseInfoSim?
+  amount          Float?
+  financedAmount  Float?
+  monthsNeeded    Int?
+  state           String?
+  updatedAt       DateTime @updatedAt
+  updatedBy       String?
+  isFinalized     Boolean
+}
+
+model WorkerTypeSim {
+  id              Int @default(autoincrement()) @id
+  simulationData  Simulation? @relation(fields: [simulationId], references: [id])
+  simulationId    Int? @unique
+  type            String
+  independent     IndependentSim?
+  contracted      ContratedSim?
+}
+
+model IndependentSim {
+  id                    Int @default(autoincrement()) @id
+  simulationData        WorkerTypeSim? @relation(fields: [workerTypeId], references: [id])
+  workerTypeId          Int? @unique
+  timeAsIndependent     Int
+  averageMonthlyIncome  Float
+  lineOfWork            String
+  personalNetworth      Float?
+  annualIncome          Float
+}
+
+model ContratedSim {
+  id                  Int @default(autoincrement()) @id
+  simulationData      WorkerTypeSim? @relation(fields: [workerTypeId], references: [id])
+  workerTypeId        Int? @unique
+  company             String
+  companySocialNumber Int
+  timeInCompany       Int
+  netSalary           Float
+  companyLineOfWork   String
+}
+
+model BaseInfoSim {
+  id              Int @default(autoincrement()) @id
+  simulationData  Simulation? @relation(fields: [simulationId], references: [id])
+  simulationId    Int? @unique
+  homeData        HomeSim? @relation(fields: [homeSimId], references: [id])
+  homeSimId       Int? @unique
+  carData         CarSim? @relation(fields: [carSimId], references: [id])
+  carSimId        Int? @unique
+  age             Int
+  chronicDiseases ChronicDisease[]
+  socialNumber    Int
+}
+
+model ChronicDisease {
+  id              Int @default (autoincrement()) @id
+  info            BaseInfoSim? @relation(fields: [baseInfoId], references: [id])
+  baseInfoId      Int? 
+  name            String
+}
+
+model ProductSim {
+  id              Int @default (autoincrement()) @id
+  type            String
+  simulationData  Simulation? @relation(fields: [simulationId], references: [id])
+  simulationId    Int? @unique
+  carData         CarSim? @relation(fields: [carSimId], references: [id])
+  carSimId        Int? @unique
+  homeData        HomeSim? @relation(fields: [homeSimId], references: [id])
+  homeSimId       Int? @unique
+}
+
+  //published Boolean? @default(false)
+  //author    User?    @relation(fields: [authorId], references: [id])
+  //authorId  Int?
