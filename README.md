@@ -10,8 +10,10 @@
 
 Setup:
 Open console inside cloned project folder and run: 
+<br>
 - npm i -g @nestjs/cli
 - npm install
 - npx prisma migrate dev
 - nest start --watch
+<br>
 Now the backend is running at: localhost:3001
