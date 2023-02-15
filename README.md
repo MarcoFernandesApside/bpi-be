@@ -9,6 +9,7 @@
   
 
 Setup:
+<br>
 Open console inside cloned project folder and run: 
 <br>
 - npm i -g @nestjs/cli
