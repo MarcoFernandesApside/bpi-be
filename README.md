@@ -22,7 +22,7 @@ Now the backend is running at: localhost:3001
 <br>
 This will be used to develop this challenge:
 <br>
-https://trello.com/c/HCu1dIiT/41-14-setup-backend
+https://trello.com/b/Yi7WW3nq/bpifrance
 <br>
 https://www.figma.com/file/nm688N9VrU4wCqQZWWugoK/BPIFrance?t=DnOGltzBDsqBdxiZ-0
 <br>
