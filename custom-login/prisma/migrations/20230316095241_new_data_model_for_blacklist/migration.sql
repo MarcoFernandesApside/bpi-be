@@ -1,0 +1,6 @@
+-- CreateTable
+CREATE TABLE "JwtBlackList" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "token" TEXT NOT NULL,
+    "created" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
