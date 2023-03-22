@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
-    "build": "tsup src"
+    "build": "tsup src",
+    "manage": "serve manager"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +32,7 @@
     "http-status-codes": "^2.2.0",
     "jsonwebtoken": "^9.0.0",
     "prisma": "^4.11.0",
+    "serve": "^14.2.0",
     "xss-clean": "^0.1.1"
   }
 }
