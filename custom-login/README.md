@@ -6,7 +6,7 @@ To run the custom login backend in your machine:
 
 - First you must run **npm install** in the root of this directory
 - Second you must run **npm run dev** to run the backend in the background, the default port is **3030**.
-- Third and last one, if you want to manage the users and create new ones you can use the manage, to use it just run **npm run manage**, the default port for the manager is **3000**.
+- Third and last one, if you want to manage the users and create new ones you can use the manager, to use it just run **npm run manage**, the default port for the manager is **3000**.
 
 Down below you will find the routes to use in your angular application for log in, check token, log out and sign up.
 
