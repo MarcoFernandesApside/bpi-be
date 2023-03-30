@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, User } from "@prisma/client";
 import { NextFunction, Request, Response } from "express";
 import argon from "argon2";
 import { StatusCodes } from "http-status-codes";
@@ -27,6 +27,27 @@ class UsersController {
       });
       res.status(StatusCodes.OK).json({
         users: dbUsers,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getUserByToken(req: Request, res: Response, next: NextFunction) {
+    try {
+      const token = req.header("Authorization")?.split(" ")[1];
+      if (!token) {
+        throw new Error("invalid authorization");
+      }
+      const tokensBL = await prisma.jwtBlackList.findMany();
+      if (tokensBL.some((tokenBL) => tokenBL.token === token)) {
+        throw new Error("invalid token");
+      }
+      const jwtToken = verify(token, process.env.JWT_SECRET!) as User;
+      res.status(StatusCodes.OK).json({
+        id: jwtToken.id,
+        email: jwtToken.email,
+        role: jwtToken.role
       });
     } catch (error) {
       next(error);
@@ -190,7 +211,7 @@ class UsersController {
         throw new Error("Wrong email/password");
       }
       const token = await createJwtToken(user);
-      res.status(StatusCodes.OK).json({ token });
+      res.status(StatusCodes.OK).json({ id: user.id, token });
     } catch (error) {
       next(error);
     }
