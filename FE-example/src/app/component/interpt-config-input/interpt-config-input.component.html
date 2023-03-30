@@ -1,0 +1,19 @@
+<div *ngFor="let element of elements">
+  <div [ngSwitch]="element.inputType" *ngIf="hasExpectedState(element)">
+    <div *ngSwitchCase="inputTypes.textInput">
+      <app-input-controller
+        [name]="element.name"
+        [inFormGroupName]="idAsStr(element.id)"
+      ></app-input-controller>
+    </div>
+    <div *ngSwitchCase="inputTypes.select">
+      <app-select-controller
+        [isReactive]="true"
+        [inFormGroupName]="idAsStr(element.id)"
+        [fields]="element.values"
+        [name]="element.name"
+      ></app-select-controller>
+    </div>
+    <div *ngSwitchDefault></div>
+  </div>
+</div>

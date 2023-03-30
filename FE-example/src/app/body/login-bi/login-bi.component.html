@@ -1,0 +1,29 @@
+<app-begin-generic-screen
+  [isActive]="true"
+  [onClick]="loginExecute"
+  [btnName]="'Login'"
+>
+  <div class="form-container">
+    <form class="form">
+      <app-input-controller
+        [name]="'email'"
+        [type]="'email'"
+        [inOnChange]="onEmail"
+        [value]="email"
+      ></app-input-controller>
+      <app-input-controller
+        [name]="'password'"
+        [type]="'password'"
+        [inOnChange]="onPassword"
+        [value]="password"
+      ></app-input-controller>
+    </form>
+  </div>
+</app-begin-generic-screen>
+<app-modal
+  [isVisible]="isModalShowing"
+  [closeModal]="closeModal"
+  [icon]="alertIcon"
+>
+  <h2>Invalid Login!</h2>
+</app-modal>

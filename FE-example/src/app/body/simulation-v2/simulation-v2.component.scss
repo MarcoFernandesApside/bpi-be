@@ -1,0 +1,51 @@
+:host ::ng-deep {
+  .empty {
+    height: 40px;
+  }
+
+  button {
+    background-color: #ffcd00 !important;
+    width: 124px;
+    height: 60px !important;
+    margin-left: 216px;
+    margin-top: 50px;
+  }
+
+  .mdc-button__label {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.title {
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 48px;
+  padding-bottom: 62px;
+}
+
+.container {
+  margin-left: 216px;
+  margin-right: 216px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 100%;
+}
+
+.column-1,
+.column-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.results {
+  width: 162px;
+  height: 80px !important;
+}

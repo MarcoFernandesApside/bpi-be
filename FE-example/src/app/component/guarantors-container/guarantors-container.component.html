@@ -1,0 +1,18 @@
+<button (click)="addNewGuarantor()" mat-raised-button>
+  <app-icons [icon]="plusIcon"></app-icons>
+  Add Guarantor
+</button>
+<div class="container" [formArrayName]="SIMULATION['fGuarantors']">
+  <div
+    *ngFor="let guarantorControls of getGuarantorsControls(); let ind = index"
+    [formGroup]="getGuarantorsControls()[ind]"
+  >
+    <app-guarantor-input-card
+      [index]="ind"
+      [isDisabled]="neverDisabled"
+      [removeGuarantor]="removeGuarantor"
+      [canBeRemoved]="true"
+    >
+    </app-guarantor-input-card>
+  </div>
+</div>

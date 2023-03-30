@@ -1,0 +1,19 @@
+<div *ngIf="isVisible">
+  <div class="block" (click)="closeModal()">
+    <div class="block-inner"></div>
+  </div>
+  <div class="modal">
+    <app-icons [icon]="icon" class="icon"></app-icons>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+    <button
+      *ngFor="let button of buttons"
+      (click)="button.click()"
+      mat-raised-button
+    >
+      <app-icons [icon]="button.icon"></app-icons>
+      {{ button.text }}
+    </button>
+  </div>
+</div>

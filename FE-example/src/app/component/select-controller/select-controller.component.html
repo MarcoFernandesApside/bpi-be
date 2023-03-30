@@ -1,0 +1,18 @@
+<div class="container" *ngIf="getIsEnabled()">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ name }}</mat-label>
+    <mat-select
+      (selectionChange)="selectionChanged($event)"
+      *ngIf="!isReactive"
+    >
+      <mat-option *ngFor="let key of keys" [value]="key">
+        {{ fields[key] }}
+      </mat-option>
+    </mat-select>
+    <mat-select [formControlName]="inFormGroupName" *ngIf="isReactive">
+      <mat-option *ngFor="let key of keys" [value]="key">
+        {{ fields[key] }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

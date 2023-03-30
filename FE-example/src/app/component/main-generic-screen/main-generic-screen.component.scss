@@ -1,0 +1,61 @@
+:host ::ng-deep .settings-container {
+  button {
+    background-color: #ffcd00;
+  }
+  .mdc-button__label {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.settings {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: #424242;
+  border-radius: 8px;
+  width: 271px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 12px 17px;
+  &-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 36px;
+    transform: translate(0, -25px);
+
+    button {
+      width: 168px;
+      height: 60px;
+    }
+
+    &-inner {
+      position: relative;
+    }
+  }
+
+  &-option {
+    display: flex;
+    gap: 30px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+.trade-img {
+  position: relative;
+  width: 216px;
+  height: 97px;
+}

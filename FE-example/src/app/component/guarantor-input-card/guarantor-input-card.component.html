@@ -1,0 +1,38 @@
+<div style="display: contents" *ngIf="this.contentPosition === 'up'">
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</div>
+<div [ngClass]="{ container: true, 'container-disabled': isDisabled() }">
+  <app-input-controller
+    [name]="SIMULATION['nSocial']"
+    [inFormGroupName]="SIMULATION['fSocial'] + index"
+  ></app-input-controller>
+  <app-input-controller
+    [name]="SIMULATION['nAge']"
+    [inFormGroupName]="SIMULATION['fAge'] + index"
+  ></app-input-controller>
+  <app-input-controller
+    [name]="SIMULATION['nChronic']"
+    [inFormGroupName]="SIMULATION['fChronic'] + index"
+    [hasChipTags]="true"
+    [isYellow]="true"
+    [isUsingScroll]="true"
+    [guarantorType]="canBeRemoved ? 'limited' : 'full'"
+  ></app-input-controller>
+  <div style="display: contents" *ngIf="contentPosition === 'inner'">
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </div>
+  <div class="container-remove">
+    <button
+      *ngIf="canBeRemoved"
+      (click)="removeGuarantor(index)"
+      mat-raised-button
+    >
+      <app-icons [icon]="dashIcon"></app-icons>
+    </button>
+  </div>
+</div>
+<div style="display: contents" *ngIf="contentPosition === 'down'">
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</div>
+
+<ng-template #contentTpl><ng-content></ng-content></ng-template>

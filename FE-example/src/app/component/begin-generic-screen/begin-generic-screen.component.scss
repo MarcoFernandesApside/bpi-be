@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  gap: 26px;
+}
+
+.trade-img {
+  width: 655px;
+  position: relative;
+  height: 289px;
+  margin-bottom: 26px;
+}
+
+.btn {
+  width: 168px;
+  height: 60px;
+  padding-top: 46px;
+
+  button {
+    font-size: 24px;
+    width: 100%;
+    height: 60px;
+    background-color: #ffcd00;
+  }
+
+  &-disabled {
+    button {
+      background-color: #ffcd00;
+      opacity: 0.5;
+    }
+  }
+}

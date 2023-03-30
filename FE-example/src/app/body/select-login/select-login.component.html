@@ -1,0 +1,12 @@
+<app-begin-generic-screen
+  [isActive]="isActive"
+  [onClick]="loginGo"
+  [btnName]="'Go'"
+>
+  <app-select-controller
+    class="select"
+    [fields]="getTypesAsObj()"
+    [inSelectionChanged]="loginChanged"
+    name="Login"
+  ></app-select-controller>
+</app-begin-generic-screen>

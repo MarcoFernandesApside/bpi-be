@@ -1,0 +1,55 @@
+<app-input-controller
+  [name]="SIMULATION['nSocial']"
+  [inFormGroupName]="SIMULATION['fSocial']"
+  [isEnabled]="getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nTime']"
+  [inFormGroupName]="SIMULATION['fTime']"
+  [isEnabled]="getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nAverage']"
+  [inFormGroupName]="SIMULATION['fAverage']"
+  [isEnabled]="getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nAnnual']"
+  [inFormGroupName]="SIMULATION['fAnual']"
+  [isEnabled]="getIsIndependent()"
+></app-input-controller>
+<app-select-controller
+  [isReactive]="true"
+  [inFormGroupName]="SIMULATION['fLineWork']"
+  [fields]="vLineWork"
+  [name]="SIMULATION['nLineWork']"
+  [isEnabled]="getIsIndependent()"
+></app-select-controller>
+
+<app-input-controller
+  [name]="SIMULATION['nCompany']"
+  [inFormGroupName]="SIMULATION['fCompany']"
+  [isEnabled]="!getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nCSocial']"
+  [inFormGroupName]="SIMULATION['fCSocial']"
+  [isEnabled]="!getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nTimeWork']"
+  [inFormGroupName]="SIMULATION['fTimeWork']"
+  [isEnabled]="!getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nNet']"
+  [inFormGroupName]="SIMULATION['fNet']"
+  [isEnabled]="!getIsIndependent()"
+></app-input-controller>
+<app-select-controller
+  [isReactive]="true"
+  [inFormGroupName]="SIMULATION['fCLineWork']"
+  [fields]="vCompanyLineWork"
+  [name]="SIMULATION['nCLineWork']"
+  [isEnabled]="!getIsIndependent()"
+></app-select-controller>

@@ -1,0 +1,103 @@
+:host ::ng-deep .full-width {
+  .mat-mdc-text-field-wrapper {
+    height: 40px;
+    background-color: white;
+  }
+
+  .mat-mdc-form-field-flex {
+    height: 40px;
+  }
+
+  .mdc-notched-outline__notch {
+    height: 40px;
+    display: flex;
+  }
+
+  .mat-mdc-form-field-flex {
+    align-items: center;
+  }
+
+  .mat-mdc-standard-chip.mdc-evolution-chip--with-trailing-action
+    .mdc-evolution-chip__action--trailing {
+    padding: 0;
+  }
+
+  .mdc-evolution-chip__cell--trailing {
+    button {
+      margin: 0;
+      height: inherit !important;
+      background-color: transparent !important;
+      font-size: 24px;
+      font-weight: 900;
+      margin: 12px 25px;
+    }
+  }
+
+  .mdc-evolution-chip__action {
+    align-items: baseline;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .mdc-evolution-chip__action {
+    align-items: center;
+  }
+
+  .full-size svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .scroll {
+    .mdc-evolution-chip-set__chips {
+      flex-flow: nowrap;
+    }
+  }
+}
+
+.full-size {
+  width: 100%;
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+}
+
+.chip-grid {
+  padding-top: 12px;
+  overflow: auto;
+}
+
+.guarantor {
+  &-limited {
+    width: 650px !important;
+  }
+  &-full {
+    width: 710px !important;
+  }
+}
+
+.chip-tag {
+  height: 54px;
+  z-index: 100;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.bg-yellow {
+  background-color: #ffcd00 !important;
+}

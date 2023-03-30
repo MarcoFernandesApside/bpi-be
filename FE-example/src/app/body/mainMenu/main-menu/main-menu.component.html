@@ -1,0 +1,12 @@
+<app-main-generic-screen>
+  <div class="cards-container">
+    <app-main-card
+      *ngFor="let btn of getConfigByAccessLevel()"
+      class="size-card"
+      [name]="btn.name"
+      [icon]="btn.icon"
+      (click)="btn.callback()"
+    ></app-main-card>
+  </div>
+</app-main-generic-screen>
+<a href="javascript:void(0)" (click)="logout($event)"> logout </a>

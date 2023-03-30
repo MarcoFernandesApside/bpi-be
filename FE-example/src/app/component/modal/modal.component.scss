@@ -1,0 +1,73 @@
+:host ::ng-deep {
+  button {
+    background-color: #ffcd00 !important;
+    width: 124px;
+    height: 60px !important;
+    margin: 0 auto;
+    margin-bottom: 58px;
+  }
+
+  .mdc-button__label {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+
+  &-inner {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  max-height: 540px;
+  z-index: 20;
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: #ffcd00;
+  border-width: 3px;
+}
+
+.content {
+  margin: 0 108px;
+  margin-top: -90px;
+
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+.icon {
+  margin-top: 16px;
+  margin-left: 30px;
+}

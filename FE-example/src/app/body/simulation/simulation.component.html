@@ -1,0 +1,20 @@
+<app-main-generic-screen>
+  <form class="container" [formGroup]="getFormGroup()">
+    <div class="column-1">
+      <app-interpt-config-input
+        [elements]="getColumn(1)"
+        [data]="data"
+        [form]="baseForm"
+      ></app-interpt-config-input>
+    </div>
+    <div class="column-2">
+      <app-interpt-config-input
+        [elements]="getColumn(2)"
+        [data]="data"
+        [form]="baseForm"
+      ></app-interpt-config-input>
+    </div>
+
+    <button (click)="next()">Next</button>
+  </form>
+</app-main-generic-screen>

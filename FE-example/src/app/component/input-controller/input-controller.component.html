@@ -1,0 +1,60 @@
+<mat-form-field class="full-width" appearance="outline" *ngIf="getIsEnabled()">
+  <mat-label>{{ name }}</mat-label>
+  <input
+    matInput
+    [type]="type"
+    (keyup)="onChange($event)"
+    [value]="value"
+    *ngIf="value !== null"
+  />
+
+  <div
+    *ngIf="value === null && hasChipTags"
+    [ngClass]="{ scroll: isUsingScroll }"
+  >
+    <input
+      matInput
+      [type]="type"
+      (matChipInputTokenEnd)="add($event)"
+      [matChipInputFor]="chipGrid"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      class="chip-input"
+    />
+    <div class="relative">
+      <mat-chip-grid
+        [ngClass]="{
+          absolute: true,
+          'chip-grid': true,
+          'guarantor-limited': guarantorType === 'limited',
+          'guarantor-full': guarantorType === 'full'
+        }"
+        [formControlName]="inFormGroupName"
+        #chipGrid
+      >
+        <mat-chip-row
+          *ngFor="let chipTag of chipTags"
+          [editable]="editable"
+          [removable]="removable"
+          (removed)="remove(chipTag)"
+          [ngClass]="{ 'chip-tag': true, 'bg-yellow': isYellow }"
+        >
+          {{ chipTag.name }}
+          <button
+            matChipRemove
+            [attr.aria-label]="'remove ' + chipTag.name"
+            *ngIf="removable"
+          >
+            <app-icons class="full-size" [icon]="dash"></app-icons>
+          </button>
+        </mat-chip-row>
+      </mat-chip-grid>
+    </div>
+  </div>
+
+  <input
+    matInput
+    [type]="type"
+    [formControlName]="inFormGroupName"
+    *ngIf="value === null && !hasChipTags"
+  />
+</mat-form-field>

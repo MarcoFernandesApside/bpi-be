@@ -1,0 +1,31 @@
+<app-input-controller
+  [name]="SIMULATION['nAmount']"
+  [inFormGroupName]="SIMULATION['fAmount']"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nFinanced']"
+  [inFormGroupName]="SIMULATION['fFinanced']"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nMonths']"
+  [inFormGroupName]="SIMULATION['fMonths']"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nPersonal']"
+  [inFormGroupName]="SIMULATION['fPersonal']"
+  *ngIf="getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nSocial']"
+  [inFormGroupName]="SIMULATION['fSocial']"
+  *ngIf="!getIsIndependent()"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nAge']"
+  [inFormGroupName]="SIMULATION['fAge']"
+></app-input-controller>
+<app-input-controller
+  [name]="SIMULATION['nChronic']"
+  [inFormGroupName]="SIMULATION['fChronic']"
+  [hasChipTags]="true"
+></app-input-controller>

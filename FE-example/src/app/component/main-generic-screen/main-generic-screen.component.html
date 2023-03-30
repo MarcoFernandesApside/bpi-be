@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="trade-img">
+    <img
+      ngSrc="/assets/Bpifrance_VP_SS_FB_RVB.png"
+      alt="BPI France Trademark"
+      fill
+    />
+  </div>
+  <ng-content></ng-content>
+  <div class="settings-container">
+    <div class="settings-container-inner">
+      <div class="settings" *ngIf="isSettingsShowing">
+        <div
+          *ngFor="let option of settingsOptions"
+          class="settings-option"
+          (click)="option.click()"
+        >
+          <app-icons [icon]="option.icon"></app-icons>
+          {{ option.label }}
+        </div>
+      </div>
+      <button mat-raised-button (click)="toggleShowingSettings()">
+        <app-icons [icon]="settingsIcon"></app-icons>
+        Settings
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<app-main-generic-screen>
+  <h1 class="title">Step {{ step }} Simulation</h1>
+  <div *ngIf="!isFirstUpdateDone">
+    {{ updateStepColumnsData() }}
+  </div>
+  <form class="container" [formGroup]="baseForm" *ngIf="isFirstUpdateDone">
+    <div class="column-1">
+      <app-simulation-step1-c1
+        [getIsIndependent]="getIsIndependent"
+        *ngIf="step === 1"
+      ></app-simulation-step1-c1>
+      <app-simulation-step2-c1
+        *ngIf="step === 2"
+        [getSelectedWorker]="getSelectedWorkerStep2"
+      ></app-simulation-step2-c1>
+    </div>
+    <div class="column-2">
+      <app-simulation-step1-c2 *ngIf="step === 1"></app-simulation-step1-c2>
+      <app-simulation-step2-c2
+        *ngIf="step === 2"
+        [getIsGuarantorDisabled]="getIsGuarantorDisabled"
+        [getSelectedProduct]="getSelectedProductStep2"
+        [addNewGuarantor]="addNewGuarantor"
+        [removeGuarantor]="removeGuarantor"
+        [getGuarantorsControls]="getGuarantorsControls"
+      ></app-simulation-step2-c2>
+    </div>
+  </form>
+  <button *ngIf="step === 1" (click)="next()" mat-raised-button>
+    <app-icons [icon]="nextIcon"></app-icons>
+    Next
+  </button>
+  <button
+    class="results"
+    *ngIf="step === 2"
+    (click)="results()"
+    mat-raised-button
+  >
+    <app-icons [icon]="resultsIcon"></app-icons>
+    Results
+  </button>
+  <app-modal
+    [isVisible]="isModalShowing"
+    [closeModal]="closeModal"
+    [icon]="alertIcon"
+  >
+    <app-form-errors-simulation
+      [data]="errorsFound"
+    ></app-form-errors-simulation>
+  </app-modal>
+</app-main-generic-screen>

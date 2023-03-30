@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>{{ requiredErrors.split("\n")[0] }}</h3>
+  <p>{{ requiredErrors.split("\n")[1] }}</p>
+  <br />
+  <ul>
+    <li *ngFor="let error of otherErrors">
+      <strong>{{ error.bold }}</strong>
+      {{ error.normal }}
+    </li>
+  </ul>
+</div>

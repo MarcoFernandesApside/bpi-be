@@ -1,0 +1,35 @@
+:host ::ng-deep .container {
+  .mat-mdc-form-field-type-mat-select {
+    background-color: white;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    height: 40px;
+    flex: auto;
+  }
+
+  .mdc-notched-outline__notch {
+    display: flex;
+  }
+
+  .mat-mdc-floating-label.mdc-floating-label {
+    margin-top: -2px;
+  }
+
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+    .mat-mdc-form-field-infix {
+    padding-top: 6px;
+    padding-bottom: 16px;
+  }
+}
+
+.container {
+  display: block;
+  font-size: 24px;
+  height: 40px;
+
+  .mat-mdc-form-field {
+    width: 100%;
+    height: 100%;
+  }
+}

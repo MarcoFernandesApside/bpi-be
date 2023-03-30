@@ -1,0 +1,17 @@
+<app-guarantor-input-card
+  [contentPosition]="'up'"
+  [isDisabled]="getIsGuarantorDisabled"
+  *ngIf="getIsCarProduct()"
+>
+  <app-checkbox-controller
+    class="margin"
+    [name]="SIMULATION['nGuarantor']"
+    [inFormGroupName]="SIMULATION['fGuarantor']"
+  ></app-checkbox-controller>
+</app-guarantor-input-card>
+<app-guarantors-container
+  *ngIf="!getIsCarProduct()"
+  [addNewGuarantor]="addNewGuarantor"
+  [removeGuarantor]="removeGuarantor"
+  [getGuarantorsControls]="getGuarantorsControls"
+></app-guarantors-container>

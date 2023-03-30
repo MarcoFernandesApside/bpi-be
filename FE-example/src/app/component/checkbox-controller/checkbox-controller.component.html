@@ -1,0 +1,6 @@
+<mat-checkbox *ngIf="inFormGroupName === null">{{ name }}</mat-checkbox>
+<mat-checkbox
+  [formControlName]="inFormGroupName"
+  *ngIf="inFormGroupName !== null"
+  >{{ name }}</mat-checkbox
+>

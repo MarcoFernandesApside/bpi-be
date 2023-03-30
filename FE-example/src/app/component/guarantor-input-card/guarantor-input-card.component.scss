@@ -1,0 +1,32 @@
+.container {
+  padding: 19px 40px;
+  padding-bottom: 86px;
+  background-color: #c8c8c8;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+
+  &-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &-remove {
+    display: block;
+    height: 21px;
+  }
+}
+
+button {
+  margin: 0;
+  width: 50px !important;
+  height: 54px !important;
+  border-radius: 20px;
+  margin-left: 100%;
+  transform: translate(-50%, 55%);
+}
